@@ -2,242 +2,121 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="consoles.css">
-    <script src="consoles.js"></script>
+    <script src="consoles.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X-POINT</title>
 </head>
 <body>
+    <audio id="carouselAudio"></audio>
+
     <header class="header">
         <div class="logo">
-            <img src="Assets/X-POINT LOGO.png" alt="X-POINT Logo">
+            X-POINT
         </div>
             <nav class="navigation">
-                <a href="home.html">Home</a>
-                <a href="about.html">About Us</a>
+                <a href="index.html">Home</a>
                 <a href="consoles.html">Consoles</a>
                 <a href="games.html">Games</a>
-                <a href="accessories.html">Accessories</a>
-                <a href="contact.html">Contact</a>
+                <a href="accessories.html">Accessories</a>         
             </nav>
     </header>
     <div class="carousel">
         <div class="list">
-            <div class="item">
-                <img src="Assets/ps1.png" alt="Console 1">
-                <div class="intro">
-                    <div class="title">
-                        Design Slider
-                    </div>
-                    <div class="topic">
-                        Playstation 3 Phat
-                    </div>
+
+            <div class="item" data-color="#202020" data-sound="sounds/ps2-sound.mp3" data-theme="dark">
+                <img src="Assets/ps2.png">
+                <div class="introduce">
+                    <div class="title">Playstation</div>
+                    <div class="topic">PS2</div>
                     <div class="des">
-                        OG
+                       
+                        Playstation 2 is a home video game console developed and marketed by Sony Computer Entertainment. It was first released on March 4, 2000, in Japan, followed by North America on October 26, 2000, and Europe on November 24, 2000. As the successor to the original PlayStation, the PS2 became the second installment in the PlayStation console series.
                     </div>
-                    <button class="seeMore">
-                        Details
-                    </button>
-                    <div class="detail">
-                        <div class="title">
-                            Playstation 3 Phat
+                    <button class="seeMore">View More Detail</button>
+                </div>
+                <div class="detail">
+                    <div class="title">PLAYSTATION 2</div>
+                    <div class="des">
+                        PlayStation 2 is a home video game console developed and marketed by Sony Computer Entertainment. It was first released on March 4, 2000, in Japan, followed by North America on October 26, 2000, and Europe on November 24, 2000. As the successor to the original PlayStation, the PS2 became the second installment in the PlayStation console series.
+                    </div>
+                    <div class="specifications">
+                        <div>
+                            <p>CPU</p>
+                            <p>64-bit "Emotion Engine" @ 294.9 MHz</p>
                         </div>
-                        <div class="spec">
-                            <div>
-                                <p> QUAD CORE</p>
-                                <p> CELL PROCESSOR</p>
-                                <p> 256MB XDR MAIN RAM</p>
-                            </div>
-                            <div>
-                                <p> HDMI</p>
-                                <p> HD</p>
-                                <p> AUDIO</p>
-                            </div>
-                            <div class="checkout">
-                                <button class="addtocart">
-                                    Add to Cart
-                                </button>
-                                <button class="checkout">
-                                    Checkout
-                                </button>
-                            </div>
+                        <div>
+                            <p>GPU</p>
+                            <p>"Graphics Synthesizer" @ 147 MHz</p>
                         </div>
+                        <div>
+                            <p>MEMORY</p>
+                            <p>32 MB RDRAM (System) 4 MB eDRAM (Video)</p>
+                        </div>
+                        <div>
+                            <p>STORAGE</p>
+                            <p>8 MB Memory Card (Optional 40 GB HDD via accessory)</p>
+                        </div>
+                        <div>
+                            <p>OPTICAL DRIVE</p>
+                            <p>DVD-ROM</p>
+                        </div>
+                    </div>
+                    <div class="checkout">
+                        <button>ADD TO CART</button>
+                        <button>CHECKOUT</button>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <img src="Assets/ps2.png" alt="Console 1">
-                <div class="intro">
-                    <div class="title">
-                        Design Slider
-                    </div>
-                    <div class="topic">
-                        Playstation 3 Phat
-                    </div>
+            <div class="item" data-color="#202020" data-sound="sounds/ps3-sound.mp3" data-theme="dark">
+                <img src="Assets/ps3 phat.png">
+                <div class="introduce">
+                    <div class="title">Playstation</div>
+                    <div class="topic">PS3</div>
                     <div class="des">
-                        OG
+                       
+                        Playstation 3 is a home video game console developed and marketed by Sony Computer Entertainment. It was first released on March 4, 2000, in Japan, followed by North America on October 26, 2000, and Europe on November 24, 2000. As the successor to the original PlayStation, the PS2 became the second installment in the PlayStation console series.
                     </div>
-                    <button class="seeMore">
-                        Details
-                    </button>
-                    <div class="detail">
-                        <div class="title">
-                            Playstation 3 Phat
-                        </div>
-                        <div class="spec">
-                            <div>
-                                <p> QUAD CORE</p>
-                                <p> CELL PROCESSOR</p>
-                                <p> 256MB XDR MAIN RAM</p>
-                            </div>
-                            <div>
-                                <p> HDMI</p>
-                                <p> HD</p>
-                                <p> AUDIO</p>
-                            </div>
-                            <div class="checkout">
-                                <button class="addtocart">
-                                    Add to Cart
-                                </button>
-                                <button class="checkout">
-                                    Checkout
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <button class="seeMore">View More Detail</button>
                 </div>
-            </div>
-            <div class="item">
-                <img src="Assets/ps3 phat.png" alt="Console 1">
-                <div class="intro">
-                    <div class="title">
-                        Design Slider
-                    </div>
-                    <div class="topic">
-                        Playstation 3 Phat
-                    </div>
+                <div class="detail">
+                    <div class="title">PLAYSTATION 3</div>
                     <div class="des">
-                        OG
+                        PlayStation 3 built upon the success of its predecessor, the PlayStation 2, and introduced several new features and advancements. It featured a more powerful Cell Broadband Engine CPU, a dedicated RSX 'Reality Synthesizer' GPU developed in collaboration with NVIDIA, and support for high-definition graphics up to 1080p. The console also introduced the Blu-ray Disc format as its primary storage medium, allowing for larger game sizes and enhanced multimedia capabilities.
                     </div>
-                    <button class="seeMore">
-                        Details
-                    </button>
-                    <div class="detail">
-                        <div class="title">
-                            Playstation 3 Phat
+                    <div class="specifications">
+                        <div>
+                            <p>CPU</p>
+                            <p>3.2 GHz Cell Broadband Engine processor</p>
                         </div>
-                        <div class="spec">
-                            <div>
-                                <p> QUAD CORE</p>
-                                <p> CELL PROCESSOR</p>
-                                <p> 256MB XDR MAIN RAM</p>
-                            </div>
-                            <div>
-                                <p> HDMI</p>
-                                <p> HD</p>
-                                <p> AUDIO</p>
-                            </div>
-                            <div class="checkout">
-                                <button class="addtocart">
-                                    Add to Cart
-                                </button>
-                                <button class="checkout">
-                                    Checkout
-                                </button>
-                            </div>
+                        <div>
+                            <p>GPU</p>
+                            <p>NVIDIA RSX GPU</p>
+                        </div>
+                        <div>
+                            <p>MEMORY</p>
+                            <p>256 MB of XDR main RAM and 256 MB of GDDR3 VRAM</p>
+                        </div>
+                        <div>
+                            <p>STORAGE</p>
+                            <p>Storage varient ranging from 20 GB to 500 GB</p>
+                        </div>
+                        <div>
+                            <p>OPTICAL DRIVE</p>
+                            <p>Blu-ray disc</p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="Assets/ps4_pro-removebg-preview.png" alt="Console 2">
-                <div class="intro">
-                    <div class="title">
-                        Design Slider
-                    </div>
-                    <div class="topic">
-                        Playstation 4 Phat
-                    </div>
-                    <div class="des">
-                        OG
-                    </div>
-                    <button class="seeMore">
-                        Details
-                    </button>
-                    <div class="detail">
-                        <div class="title">
-                            Playstation 4 Phat
-                        </div>
-                        <div class="spec">
-                            <div>
-                                <p> QUAD CORE</p>
-                                <p> CELL PROCESSOR</p>
-                                <p> 256MB XDR MAIN RAM</p>
-                            </div>
-                            <div>
-                                <p> HDMI</p>
-                                <p> HD</p>
-                                <p> AUDIO</p>
-                            </div>
-                            <div class="checkout">
-                                <button class="addtocart">
-                                    Add to Cart
-                                </button>
-                                <button class="checkout">
-                                    Checkout
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="Assets/ps5 phat.png" alt="Console 3">
-                <div class="intro">
-                    <div class="title">
-                        Design Slider
-                    </div>
-                    <div class="topic">
-                        Playstation 5 Phat
-                    </div>
-                    <div class="des">
-                        OG
-                    </div>
-                    <button class="seeMore">
-                        Details
-                    </button>
-                    <div class="detail">
-                        <div class="title">
-                            Playstation 5 Phat
-                        </div>
-                        <div class="spec">
-                            <div>
-                                <p> QUAD CORE</p>
-                                <p> CELL PROCESSOR</p>
-                                <p> 256MB XDR MAIN RAM</p>
-                            </div>
-                            <div>
-                                <p> HDMI</p>
-                                <p> HD</p>
-                                <p> AUDIO</p>
-                            </div>
-                            <div class="checkout">
-                                <button class="addtocart">
-                                    Add to Cart
-                                </button>
-                                <button class="checkout">
-                                    Checkout
-                                </button>
-                            </div>
-                        </div>
+                    <div class="checkout">
+                        <button>ADD TO CART</button>
+                        <button>CHECKOUT</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="arrow">
-            <button id="prev">previous</button>
+        <div class="arrows">
+            <button id="prev">back</button>
             <button id="next">next</button>
-            <button id="back">Go back</button>
+            <button id="back">HOME</button>
         </div>
     </div>
 </body>
