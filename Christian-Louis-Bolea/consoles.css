@@ -1,9 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Play:wght@400;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; 
+}
+
+html {
+    font-size: clamp(0.875rem, 0.5rem + 1vw, 1.125rem);
+}
+
 body{
     font-family: 'Play', sans-serif;
-    margin: 0;
     background: rgb(186, 226, 231);
     transition: background 0.5s ease;
+    
+    display: flex;
+    flex-direction: column;
 }
 :root{
     --item1-transform: translateX(-100%) translateY(-5%) scale(1.5);
@@ -32,17 +45,19 @@ body{
     --item5-opacity: 0;
 }
 header{
-    width: 1140px;
-    max-width: 90%;
+    width: 100%; 
+    padding: 0 5%; 
+    box-sizing: border-box; 
     display: flex;
     justify-content: space-between;
-    margin: auto;
     height: 50px;
     align-items: center;
+    flex-shrink: 0; 
 }
 header .logo{
     font-weight: bold;
-    color: WHITE;
+    color: #555; 
+    font-size: 1.5rem; 
 }
 header nav a{
     margin-left: 30px;
@@ -50,12 +65,12 @@ header nav a{
     color: #555;
     font-weight: 500;
     transition: color 0.5s ease;
+    font-size: 1.1rem; 
 }
 .carousel{
     position: relative;
-    height: 800px;
+    flex-grow: 1; 
     overflow: hidden;
-    margin-top: -50px;
 }
 .carousel .list{
     position: absolute;
@@ -70,7 +85,7 @@ header nav a{
     left: 0%;
     width: 70%;
     height: 100%;
-    font-size: 15px;
+    font-size: clamp(0.9rem, 1vw, 1.1rem); 
     transition: left 0.5s, opacity 0.5s, width 0.5s;
 }
 .carousel .list .item:nth-child(n + 6){
@@ -81,9 +96,9 @@ header nav a{
     transform: translateX(0);
 }
 .carousel .list .item img{
-    width: 50%;
+    width: 110%;
     position: absolute;
-    right: 0;
+    right: -55%;
     top: 50%;
     transform: translateY(-50%);
     transition: right 1.5s;
@@ -91,7 +106,9 @@ header nav a{
 .carousel .list .item .introduce{
     opacity: 0;
     pointer-events: none;
+    
 }
+
 .carousel .list .item:nth-child(2) .introduce{
     opacity: 1;
     pointer-events: auto;
@@ -102,34 +119,89 @@ header nav a{
     transition: opacity 0.5s;
 }
 .carousel .list .item .introduce .title{
-    font-size: 2em;
+    font-size: clamp(1.5rem, 2vw, 2.2rem); 
     font-weight: 500;
     line-height: 1em;
     transition: color 0.5s ease;
 }
 .carousel .list .item .introduce .topic{
-    font-size: 4em;
+    font-size: clamp(3rem, 5vw, 5rem); 
     font-weight: 500;
     transition: color 0.5s ease;
 }
 .carousel .list .item .introduce .des{
-    font-size: small;
+    font-size: clamp(0.9rem, 1vw, 1.1rem); 
     color: #5559;
     transition: color 0.5s ease;
 }
-.carousel .list .item .introduce .seeMore{
-    font-family: Poppins;
+.carousel .list .item .introduce .seeMore {
+    position: relative;
+    background-color: #262626; 
+    height: 4rem; 
+    width: 16rem; 
+    border: 1px solid transparent; 
+    text-align: left; 
+    padding: 0.75rem; 
+    color: #f9fafb; 
+    font-size: clamp(0.9rem, 1vw, 1rem); 
+    font-weight: 700; 
+    font-family: 'Play', sans-serif; 
+    border-radius: 0.5rem; 
+    overflow: hidden; 
+    transition-duration: 500ms; 
+    text-decoration-line: none;
+    transform-origin: left; 
+    cursor: pointer;
+
     margin-top: 1.2em;
-    padding: 5px 0;
-    border: none;
-    border-bottom: 1px solid #555;
-    background-color: transparent;
-    font-weight: bold;
-    letter-spacing: 3px;
-    transition: background 0.5s, color 0.5s ease, border-color 0.5s ease;
+    
+    letter-spacing: normal;
 }
-.carousel .list .item .introduce .seeMore:hover{
-    background: #eee;
+
+.carousel .list .item .introduce .seeMore:hover {
+    border-color: #fda4af; 
+    color: #fda4af; 
+    background: #262626; 
+}
+
+.carousel .list .item .introduce .seeMore::before {
+    position: absolute;
+    content: '';
+    width: 3rem; 
+    height: 3rem; 
+    right: 0.25rem; 
+    top: 0.25rem; 
+    z-index: 10; 
+    background-color: #8b5cf6; 
+    border-radius: 9999px; 
+    filter: blur(16px); 
+    transition-duration: 500ms; 
+}
+
+.carousel .list .item .introduce .seeMore::after {
+    position: absolute;
+    content: '';
+    z-index: 10; 
+    width: 5rem; 
+    height: 5rem; 
+    background-color: #fda4af; 
+    right: 2rem; 
+    top: 0.75rem; 
+    border-radius: 9999px; 
+    filter: blur(16px); 
+    transition-duration: 500ms; 
+}
+
+.carousel .list .item .introduce .seeMore:hover::before {
+    box-shadow: 20px 20px 20px 30px #a21caf; 
+    right: 3rem; 
+    bottom: -2rem; 
+    top: auto; 
+    filter: blur(8px); 
+}
+
+.carousel .list .item .introduce .seeMore:hover::after {
+    right: -2rem; 
 }
 .carousel .list .item:nth-child(1){
     transform: var(--item1-transform);
@@ -270,11 +342,12 @@ header nav a{
     pointer-events: auto;
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .title{
-    font-size: 4em;
+    font-size: clamp(2.5rem, 4vw, 4rem); 
     transition: color 0.5s ease;
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .des { 
     transition: color 0.5s ease;
+    font-size: clamp(0.9rem, 1vw, 1.1rem); 
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications{
     display: flex;
@@ -286,6 +359,7 @@ header nav a{
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications p { 
     transition: color 0.5s ease;
+    font-size: clamp(0.85rem, 1vw, 1rem); 
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications div{
     width: 90px;
@@ -345,7 +419,7 @@ header nav a{
     outline:none;
     cursor: pointer;
     border: none;
-    font-size: 24px;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     color: rgb(0, 0, 0);
     font-family: play, sans-serif;
     transition: all 0.3s ease-in-out;
@@ -362,8 +436,8 @@ header nav a{
     outline:none;
     cursor: pointer;
     border: none;
-    font-size: 24px;
-    color: rgb(0, 0, 0);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: rgb(0, 0, 0); 
     font-family: play, sans-serif;
     transition: all 0.3s ease-in-out;
     position: absolute;
@@ -375,10 +449,14 @@ header nav a{
     padding: 0;
     font-weight: normal;
     letter-spacing: normal;
+    opacity: 0;
+    pointer-events: none;
 }
 
 #prev:hover,
 #next:hover{
+    background-image: linear-gradient(135deg, #b1b1b1 0%, #bebebe 100%);
+    color: white;
     transform: translateY(3px);
     box-shadow: none;
 
@@ -397,6 +475,7 @@ header nav a{
 
 .carousel.showDetail #back{
     opacity: 1;
+    pointer-events: auto;
 }
 .carousel.showDetail #prev,
 .carousel.showDetail #next{
@@ -429,16 +508,12 @@ header nav a{
         overflow: auto;
     }
     .carousel.showDetail .list .item:nth-child(2) .detail .title{
-        font-size: 2em;
+        font-size: clamp(2rem, 4vw, 3rem);
     }
 }
 @media screen and (max-width: 767px){
-    .carousel{
-        height: 600px;
-    }
     .carousel .list .item{
         width: 100%;
-        font-size: 10px;
     }
     .carousel .list{
         height: 100%;
@@ -447,11 +522,10 @@ header nav a{
         width: 50%;
     }
     .carousel .list .item img{
-        width: 40%;
+        width: 60%;
     }
     .carousel.showDetail .list .item:nth-child(2) .detail{
         backdrop-filter: blur(10px);
-        font-size: small;
     }
     .carousel .list .item:nth-child(2) .introduce .des,
     .carousel.showDetail .list .item:nth-child(2) .detail .des{
@@ -464,6 +538,10 @@ header nav a{
         float: right;
     }
 }
+
+body.dark-theme header .logo {
+    color: #f0f0f0;
+}
 body.dark-theme header nav a {
     color: #f0f0f0;
 }
@@ -474,13 +552,7 @@ body.dark-theme .carousel .list .item .introduce .topic {
 body.dark-theme .carousel .list .item .introduce .des {
     color: rgba(240, 240, 240, 0.7);
 }
-body.dark-theme .carousel .list .item .introduce .seeMore {
-    color: #f0f0f0;
-    border-bottom-color: #f0f0f0;
-}
-body.dark-theme .carousel .list .item .introduce .seeMore:hover {
-    background: #333;
-}
+
 body.dark-theme .carousel.showDetail .list .item:nth-child(2) .detail .title,
 body.dark-theme .carousel.showDetail .list .item:nth-child(2) .detail .des,
 body.dark-theme .carousel.showDetail .list .item:nth-child(2) .detail .specifications p {
@@ -496,9 +568,7 @@ body.dark-theme .carousel.carousel.showDetail .list .item:nth-child(2) .checkout
 body.dark-theme #prev,
 body.dark-theme #next {
     color: #020202;
-    border-color: rgba(240, 240, 240, 0.3);
 }
 body.dark-theme #back {
-    color: #f0f0f0;
-    border-bottom-color: #f0f0f0;
+    color: #020202; 
 }
