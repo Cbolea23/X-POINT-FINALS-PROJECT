@@ -1,0 +1,127 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Point Games</title>
+    <link rel="stylesheet" href="games.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Section -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="brand">
+                <h1>X-POINT</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">Games</a></li>
+                    <li><a href="#">Consoles</a></li>
+                    <li><a href="#">Peripherals</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section with Games of the Month -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="featured-games">
+            <h2>Games of the Month</h2>
+            <div class="games-carousel">
+                <div class="game-card">
+                    <img src="../Christian-Louis-Bolea/Assets/resize/1.jpg" alt="Featured Game 1">
+                    <div class="game-info">
+                        <h3>Game Title 1</h3>
+                        <span class="price">$59.99</span>
+                    </div>
+                </div>
+                <!-- Add 4 more game cards with similar structure -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sale Games Slider Section -->
+    <section class="sale-games">
+        <h2>Featured Sales</h2>
+        <div class="slider-container">
+            <div id="slide">
+            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/1.jpg');">
+                <div class="content">
+                    <div class="name">Game Title 1</div>
+                    <div class="des">An exciting adventure game that takes you through amazing worlds.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/2.jpg');">
+                <div class="content">
+                    <div class="name">Game Title 2</div>
+                    <div class="des">A thrilling action game with stunning visuals and gameplay.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/3.jpg');">
+                <div class="content">
+                    <div class="name">Game Title 3</div>
+                    <div class="des">Experience strategy and tactics in this epic game.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/4.jpg');">
+                <div class="content">
+                    <div class="name">Game Title 4</div>
+                    <div class="des">Immerse yourself in this story-driven adventure.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/5.jpg');">
+                <div class="content">
+                    <div class="name">Game Title 5</div>
+                    <div class="des">Challenge yourself in this intense action RPG.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/6.jpg');">
+                <div class="content">
+                    <div class="name">Game Title 6</div>
+                    <div class="des">Explore vast worlds in this open-world adventure.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            </div>
+            <div class="buttons">
+                <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+                <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Games Grid Section -->
+    <section class="more-games">
+        <h2>More Games on Sale</h2>
+        <div class="games-grid">
+            <!-- 6x6 grid of game cards -->
+            <div class="game-grid-item">
+                <img src="../Christian-Louis-Bolea/Assets/resize/1.jpg" alt="Game 1">
+                <div class="game-grid-info">
+                    <h3>Game Title</h3>
+                    <div class="price-info">
+                        <span class="original-price">$59.99</span>
+                        <span class="discount">-30%</span>
+                        <span class="final-price">$41.99</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more game grid items here -->
+        </div>
+    </section>
+
+    <script src="games.js"></script>
+</body>
+</html>

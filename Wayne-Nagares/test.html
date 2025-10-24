@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Glass Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #1a1a1a;
+            background-image: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        }
+
+        .button {
+            position: relative;
+            width: 460px;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            background: none;
+            padding: 0;
+        }
+
+        .liquidglass-wrapper {
+            position: absolute;
+            inset: 0;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .button.clicked .liquidglass-wrapper {
+            transform: scale(1.05);
+        }
+
+        .glass-panel {
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(7px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            transition: all 0.4s ease;
+        }
+
+        .liquidglass-effect {
+            position: absolute;
+            inset: 0;
+            filter: url(#liquid-glass);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .button.clicked .liquidglass-effect {
+            opacity: 1;
+        }
+
+        .liquidglass-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:hover .glass-panel {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        @keyframes turbulence {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <button class="button">
+        <div class="liquidglass-wrapper">
+            <div class="glass-panel"></div>
+            <div class="liquidglass-effect"></div>
+            <div class="liquidglass-content">
+                <h2>Click Me</h2>
+            </div>
+        </div>
+    </button>
+
+    <svg style="display: none;">
+        <filter id="liquid-glass">
+            <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.03 0.03"
+                numOctaves="2"
+                seed="1"
+                result="turbulence"
+            >
+                <animate
+                    attributeName="baseFrequency"
+                    dur="30s"
+                    values="0.03 0.03;0.06 0.06;0.03 0.03"
+                    repeatCount="indefinite"
+                />
+            </feTurbulence>
+            <feGaussianBlur 
+                in="turbulence"
+                stdDeviation="2" 
+                result="softMap" 
+            />
+            <feDisplacementMap
+                in="SourceGraphic"
+                in2="softMap" 
+                scale="40"
+                result="displacement" 
+            />
+        </filter>
+    </svg>
+
+    <script>
+        const button = document.querySelector('.button');
+        button.addEventListener('click', () => {
+            button.classList.toggle('clicked');
+        });
+    </script>
+</body>
+</html>
+    
