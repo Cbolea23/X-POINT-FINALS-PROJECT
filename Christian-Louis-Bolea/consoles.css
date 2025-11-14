@@ -14,7 +14,6 @@ body{
     font-family: 'Play', sans-serif;
     background: rgb(186, 226, 231);
     transition: background 0.5s ease;
-    
     display: flex;
     flex-direction: column;
 }
@@ -23,50 +22,48 @@ body{
     --item1-filter: blur(30px);
     --item1-zIndex: 11;
     --item1-opacity: 0;
-
     --item2-transform: translateX(0);
     --item2-filter: blur(0px);
     --item2-zIndex: 10;
     --item2-opacity: 1;
-
     --item3-transform: translate(50%,10%) scale(0.8);
     --item3-filter: blur(10px);
     --item3-zIndex: 9;
     --item3-opacity: 1;
-
     --item4-transform: translate(90%,20%) scale(0.5);
     --item4-filter: blur(30px);
     --item4-zIndex: 8;
     --item4-opacity: 1;
-    
     --item5-transform: translate(120%,30%) scale(0.3);
     --item5-filter: blur(40px);
     --item5-zIndex: 7;
     --item5-opacity: 0;
 }
-header{
-    width: 100%; 
+
+.navbar {
     padding: 0 5%; 
-    box-sizing: border-box; 
-    display: flex;
-    justify-content: space-between;
     height: 50px;
-    align-items: center;
-    flex-shrink: 0; 
+    background: none !important;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
-header .logo{
+.navbar-brand{
     font-weight: bold;
     color: #555; 
     font-size: 1.5rem; 
 }
-header nav a{
-    margin-left: 30px;
+.navbar-nav .nav-link{
     text-decoration: none;
     color: #555;
     font-weight: 500;
     transition: color 0.5s ease;
     font-size: 1.1rem; 
+    margin-left: 30px;
 }
+.navbar-nav .nav-link.active {
+    color: #555 !important; 
+}
+
 .carousel{
     position: relative;
     flex-grow: 1; 
@@ -129,6 +126,21 @@ header nav a{
     font-weight: 500;
     transition: color 0.5s ease;
 }
+
+.item[data-sound="sounds/ps1-sound.mp3"] .introduce .title,
+.item[data-sound="sounds/ps1-sound.mp3"] .introduce .topic,
+.item[data-sound="sounds/ps1-sound.mp3"] .detail .title,
+.item[data-sound="sounds/ps1-sound.mp3"] .detail .des,
+.item[data-sound="sounds/ps1-sound.mp3"] .detail .specifications p,
+.item[data-sound="sounds/ps1-sound.mp3"] .checkout .btn-outline-secondary {
+    color: #000000 !important; 
+    border-color: rgba(0, 0, 0, 0.3) !important;
+}
+.item[data-sound="sounds/ps1-sound.mp3"] .introduce .des {
+    color: rgba(0, 0, 0, 0.7) !important; 
+}
+
+
 .carousel .list .item .introduce .des{
     font-size: clamp(0.9rem, 1vw, 1.1rem); 
     color: #5559;
@@ -152,9 +164,7 @@ header nav a{
     text-decoration-line: none;
     transform-origin: left; 
     cursor: pointer;
-
     margin-top: 1.2em;
-    
     letter-spacing: normal;
 }
 
@@ -350,39 +360,46 @@ header nav a{
     font-size: clamp(0.9rem, 1vw, 1.1rem); 
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications{
-    display: flex;
-    gap: 10px;
     width: 100%;
     border-top: 1px solid #5553;
     margin-top: 20px;
     transition: border-color 0.5s ease;
+    padding-left: 0.5rem; 
+    padding-right: 0.5rem; 
+    margin-top: 20px;
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications p { 
     transition: color 0.5s ease;
     font-size: clamp(0.85rem, 1vw, 1rem); 
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications div{
-    width: 90px;
     text-align: center;
-    flex-shrink: 0;
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications div p:nth-child(1){
     font-weight: bold;
 }
-.carousel.carousel.showDetail .list .item:nth-child(2) .checkout button{
-    font-family: Poppins;
-    background-color: transparent;
+
+.carousel.carousel.showDetail .list .item:nth-child(2) .checkout .btn{
+    font-family: 'Play', sans-serif;
     border: 1px solid #5555;
     margin-left: 5px;
     padding: 5px 10px;
     letter-spacing: 2px;
     font-weight: 500;
-    transition: color 0.5s ease, border-color 0.5s ease;
+    transition: color 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
 }
-.carousel.carousel.showDetail .list .item:nth-child(2) .checkout button:nth-child(2){
+.carousel.carousel.showDetail .list .item:nth-child(2) .checkout .btn-primary{
     background-color: #693EFF;
     color: #eee;
+    border-color: #693EFF;
 }
+.carousel.carousel.showDetail .list .item:nth-child(2) .checkout .btn-outline-secondary{
+    background-color: transparent;
+    color: #555;
+    border-color: #5555;
+}
+
+
 .carousel.showDetail .list .item:nth-child(2) .detail  .title,
 .carousel.showDetail .list .item:nth-child(2) .detail  .des,
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications,
@@ -401,30 +418,44 @@ header nav a{
 }
 .arrows{
     position: absolute;
-    bottom: 10px;
-    width: 1140px;
-    max-width: 90%;
+    width: 100%;
+    max-width: unset;
     display: flex;
     justify-content: space-between;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    transform: none;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 5%;
+    box-sizing: border-box;
+    pointer-events: none;
 }
+.arrows button {
+    pointer-events: auto;
+}
+
+.carousel.showDetail .arrows {
+    display: block;
+    top: auto;
+    transform: none;
+    height: 100%;
+}
+
+
 #prev,
 #next{
-    width: 150px;
+    width: 60px;
     height: 60px;
-    border-radius: 50px;
+    border-radius: 50%;
     background-image: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
     box-shadow: 0 20px 30px -6px rgba(0, 58, 250, 0.5);
     outline:none;
     cursor: pointer;
     border: none;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-size: 2rem;
     color: rgb(0, 0, 0);
     font-family: play, sans-serif;
     transition: all 0.3s ease-in-out;
-    bottom: 20%;
-    left: 10%;
 }
 
 #back{
@@ -440,9 +471,9 @@ header nav a{
     color: rgb(0, 0, 0); 
     font-family: play, sans-serif;
     transition: all 0.3s ease-in-out;
-    position: absolute;
-    z-index: 100;
-    bottom: 0%;
+    position: fixed;
+    z-index: 9999;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background-color: unset;
@@ -477,6 +508,11 @@ header nav a{
     opacity: 1;
     pointer-events: auto;
 }
+.carousel.showDetail .list .item:nth-child(2) .detail .checkout{
+    display: flex;
+    width: max-content;
+    float: right;
+}
 .carousel.showDetail #prev,
 .carousel.showDetail #next{
     opacity: 0;
@@ -500,6 +536,23 @@ header nav a{
     transform: translate(-100%, -50%) rotate(90deg);
     filter: blur(130px);
 }
+
+.item[data-sound="sounds/ps1-sound.mp3"]:nth-child(2) ~ .arrows + .navbar .navbar-brand,
+.item[data-sound="sounds/ps1-sound.mp3"]:nth-child(2) ~ .arrows + .navbar .nav-link {
+    color: #000000 !important;
+}
+body.dark-theme .item[data-sound="sounds/ps1-sound.mp3"]:nth-child(2) ~ .arrows + .navbar .navbar-brand,
+body.dark-theme .item[data-sound="sounds/ps1-sound.mp3"]:nth-child(2) ~ .arrows + .navbar .nav-link {
+    color: #000000 !important;
+}
+
+body.ps1-active .navbar-brand,
+body.ps1-active .nav-link,
+body.ps1-active .nav-link.active {
+    color: #000000 !important;
+}
+
+
 @media screen and (max-width: 991px){
     .carousel .list .item{
         width: 90%;
@@ -512,6 +565,15 @@ header nav a{
     }
 }
 @media screen and (max-width: 767px){
+    .navbar-toggler {
+        color: #555;
+        border-color: #555;
+    }
+    body.dark-theme .navbar-toggler {
+        color: #f0f0f0;
+        border-color: #f0f0f0;
+    }
+
     .carousel .list .item{
         width: 100%;
     }
@@ -527,8 +589,7 @@ header nav a{
     .carousel.showDetail .list .item:nth-child(2) .detail{
         backdrop-filter: blur(10px);
     }
-    .carousel .list .item:nth-child(2) .introduce .des,
-    .carousel.showDetail .list .item:nth-child(2) .detail .des{
+    .carousel .list .item:nth-child(2) .detail .des{
         height: 100px;
         overflow: auto;
     }
@@ -539,11 +600,14 @@ header nav a{
     }
 }
 
-body.dark-theme header .logo {
+body.dark-theme .navbar-brand {
     color: #f0f0f0;
 }
-body.dark-theme header nav a {
+body.dark-theme .navbar-nav .nav-link {
     color: #f0f0f0;
+}
+body.dark-theme .navbar-nav .nav-link.active {
+    color: #f0f0f0 !important; 
 }
 body.dark-theme .carousel .list .item .introduce .title,
 body.dark-theme .carousel .list .item .introduce .topic {
@@ -553,6 +617,18 @@ body.dark-theme .carousel .list .item .introduce .des {
     color: rgba(240, 240, 240, 0.7);
 }
 
+body.dark-theme .item[data-sound="sounds/ps1-sound.mp3"] .introduce .title,
+body.dark-theme .item[data-sound="sounds/ps1-sound.mp3"] .introduce .topic,
+body.dark-theme .item[data-sound="sounds/ps1-sound.mp3"] .detail .title,
+body.dark-theme .item[data-sound="sounds/ps1-sound.mp3"] .detail .des,
+body.dark-theme .item[data-sound="sounds/ps1-sound.mp3"] .detail .specifications p {
+    color: #000000;
+}
+body.dark-theme .item[data-sound="sounds/ps1-sound.mp3"] .introduce .des {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+
 body.dark-theme .carousel.showDetail .list .item:nth-child(2) .detail .title,
 body.dark-theme .carousel.showDetail .list .item:nth-child(2) .detail .des,
 body.dark-theme .carousel.showDetail .list .item:nth-child(2) .detail .specifications p {
@@ -561,10 +637,17 @@ body.dark-theme .carousel.showDetail .list .item:nth-child(2) .detail .specifica
 body.dark-theme .carousel.showDetail .list .item:nth-child(2) .detail .specifications {
     border-top-color: rgba(240, 240, 240, 0.3);
 }
-body.dark-theme .carousel.carousel.showDetail .list .item:nth-child(2) .checkout button {
+
+body.dark-theme .carousel.carousel.showDetail .list .item:nth-child(2) .checkout .btn-outline-secondary {
     color: #f0f0f0;
     border-color: rgba(240, 240, 240, 0.3);
 }
+body.dark-theme .carousel.carousel.showDetail .list .item:nth-child(2) .checkout .btn-primary {
+    color: #eee;
+    background-color: #693EFF;
+    border-color: #693EFF;
+}
+
 body.dark-theme #prev,
 body.dark-theme #next {
     color: #020202;
