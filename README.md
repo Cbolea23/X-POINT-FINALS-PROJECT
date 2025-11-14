@@ -3,4 +3,4 @@ specialized e-commerce website focused on bringing PlayStation products such as 
 
 
 Live page: https://cbolea23.github.io/X-POINT-FINALS-PROJECT/
-30% done
+50% done
