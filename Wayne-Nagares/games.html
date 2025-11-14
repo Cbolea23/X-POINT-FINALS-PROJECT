@@ -5,44 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X-Point Games</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="games.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation Section -->
-    <header class="main-header">
+    <!-- Navigation Section (replaced with consoles-style header) -->
+    <header class="main-header header">
         <div class="header-content">
-            <div class="brand">
-                <h1>X-POINT</h1>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#" class="active">Games</a></li>
-                    <li><a href="#">Consoles</a></li>
-                    <li><a href="#">Peripherals</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+            <div class="brand logo">X-POINT</div>
+
+            <!-- keep both class names so existing JS/CSS continue to work -->
+            <nav class="main-nav navigation">
+                <a href="index.html">Home</a>
+                <a href="consoles.html">Consoles</a>
+                <a href="games.html" class="active">Games</a>
+                <a href="accessories.html">Accessories</a>
             </nav>
-            <button class="mobile-menu-toggle">
+
+            <!-- mobile toggle (games.js expects .mobile-menu-toggle) -->
+            <button class="mobile-menu-toggle" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <!-- Hero Section with Games of the Month -->
+    <!-- Hero Section with Newly Released Games Carousel -->
     <section class="hero-section">
-        <div class="hero-background"></div>
-        <div class="featured-games">
-            <h2>Games of the Month</h2>
-            <div class="games-carousel">
-                <div class="game-card">
-                    <img src="../Christian-Louis-Bolea/Assets/resize/1.jpg" alt="Featured Game 1">
-                    <div class="game-info">
-                        <h3>Game Title 1</h3>
-                        <span class="price">$59.99</span>
+        <div class="hero-container">
+            <h2>Newly Released Games</h2>
+            
+            <!-- Background plate -->
+            <div class="carousel-plate">
+                <!-- Foreground slider box -->
+                <div class="carousel-slider">
+                    <div class="slides-container">
+                        <div class="slide active">
+                            <img src="game-assets/GTA 6 Wall.jpg" alt="GTA 6">
+                            <div class="slide-info">
+                                <h3>Grand Theft Auto VI</h3>
+                                <p class="game-price">$69.99</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="game-assets/Call of Duty Black Ops 7 (Wall).jpg" alt="Call of Duty Black Ops 7">
+                            <div class="slide-info">
+                                <h3>Call of Duty: Black Ops 7</h3>
+                                <p class="game-price">$69.99</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="game-assets/Battlefield 6 (Wall).jpg" alt="Battlefield 6">
+                            <div class="slide-info">
+                                <h3>Battlefield 6</h3>
+                                <p class="game-price">$59.99</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="game-assets/Where Winds Meet (Wall).jpg" alt="Where Winds Meet">
+                            <div class="slide-info">
+                                <h3>Where Winds Meet</h3>
+                                <p class="game-price">$79.99</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="game-assets/Arc Raiders (Wall).jpg" alt="Arc Raiders">
+                            <div class="slide-info">
+                                <h3>Arc Raiders</h3>
+                                <p class="game-price">$59.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Radio button indicators -->
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                        <span class="indicator" data-slide="4"></span>
                     </div>
                 </div>
-                <!-- Add 4 more game cards with similar structure -->
             </div>
         </div>
     </section>
@@ -52,45 +96,51 @@
         <h2>Featured Sales</h2>
         <div class="slider-container">
             <div id="slide">
-            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/1.jpg');">
+            <div class="item" style="background-image: url('game-assets/Elden Ring Nightreign (Poster).jpg');">
                 <div class="content">
-                    <div class="name">Game Title 1</div>
-                    <div class="des">An exciting adventure game that takes you through amazing worlds.</div>
+                    <div class="name">Elden Ring: Nightreign</div>
+                    <div class="des">Descend into the darkest chapter of the Lands Between. Face nightmarish enemies and uncover secrets that lurk in the shadows of this haunting expansion.</div>
+                    <div class="sale-price">$39.99</div>
                     <button>See more</button>
                 </div>
             </div>
-            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/2.jpg');">
+            <div class="item" style="background-image: url('game-assets/God of War Ragnarok (Poster).jpg');">
                 <div class="content">
-                    <div class="name">Game Title 2</div>
-                    <div class="des">A thrilling action game with stunning visuals and gameplay.</div>
+                    <div class="name">God of War Ragnarök</div>
+                    <div class="des">Embark on an epic and heartfelt journey as Kratos and Atreus struggle with holding on and letting go. Witness the twilight of the Norse gods.</div>
+                    <div class="sale-price">$49.99</div>
                     <button>See more</button>
                 </div>
             </div>
-            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/3.jpg');">
+            <div class="item" style="background-image: url('game-assets/RDR Poster.jpg');">
                 <div class="content">
-                    <div class="name">Game Title 3</div>
-                    <div class="des">Experience strategy and tactics in this epic game.</div>
+                    <div class="name">Red Dead Redemption</div>
+                    <div class="des">Experience the epic tale of outlaw John Marston as he hunts down his former gang members across the dying Wild West. A masterpiece reborn.</div>
+                    <div class="sale-price">$29.99</div>
                     <button>See more</button>
                 </div>
             </div>
-            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/4.jpg');">
+            <div class="item" style="background-image: url('game-assets/RDR2 Poster.png');">
                 <div class="content">
-                    <div class="name">Game Title 4</div>
-                    <div class="des">Immerse yourself in this story-driven adventure.</div>
+                    <div class="name">Red Dead Redemption 2</div>
+                    <div class="des">America, 1899. Arthur Morgan and the Van der Linde gang must rob, steal and fight their way across the rugged heartland in this stunning Western epic.</div>
+                    <div class="sale-price">$34.99</div>
                     <button>See more</button>
                 </div>
             </div>
-            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/5.jpg');">
+            <div class="item" style="background-image: url('game-assets/Final Fantasy 16 (Poster).jpg');">
                 <div class="content">
-                    <div class="name">Game Title 5</div>
-                    <div class="des">Challenge yourself in this intense action RPG.</div>
+                    <div class="name">Final Fantasy XVI</div>
+                    <div class="des">A tale of war, betrayal and revenge set against a backdrop of powerful Eikons. Experience real-time combat and a dark, mature Final Fantasy story.</div>
+                    <div class="sale-price">$44.99</div>
                     <button>See more</button>
                 </div>
             </div>
-            <div class="item" style="background-image: url('../Christian-Louis-Bolea/Assets/resize/6.jpg');">
+            <div class="item" style="background-image: url('game-assets/Stellar Blade (Poster).jpg');">
                 <div class="content">
-                    <div class="name">Game Title 6</div>
-                    <div class="des">Explore vast worlds in this open-world adventure.</div>
+                    <div class="name">Stellar Blade</div>
+                    <div class="des">Reclaim Earth from alien invaders in this stylish action adventure. Master lightning-fast combat and explore a beautifully desolate post-apocalyptic world.</div>
+                    <div class="sale-price">$39.99</div>
                     <button>See more</button>
                 </div>
             </div>
@@ -102,26 +152,524 @@
         </div>
     </section>
 
-    <!-- More Games Grid Section -->
-    <section class="more-games">
-        <h2>More Games on Sale</h2>
-        <div class="games-grid">
-            <!-- 6x6 grid of game cards -->
-            <div class="game-grid-item">
-                <img src="../Christian-Louis-Bolea/Assets/resize/1.jpg" alt="Game 1">
-                <div class="game-grid-info">
-                    <h3>Game Title</h3>
-                    <div class="price-info">
-                        <span class="original-price">$59.99</span>
-                        <span class="discount">-30%</span>
-                        <span class="final-price">$41.99</span>
-                    </div>
+    <!-- Old Games for Oldies Section -->
+    <section class="old-games">
+        <div class="old-games-container">
+            <div class="old-games-description">
+                <h2>Old Games for Oldies</h2>
+                <p>Step back in time and relive the golden age of gaming. From the groundbreaking classics of the PlayStation 1 era to the revolutionary titles that defined the PS2 and PS3 generations, this collection celebrates the games that shaped gaming history.</p>
+                <p>Whether you're a veteran gamer looking to revisit beloved memories or a new player curious about gaming's legendary past, these timeless masterpieces offer unforgettable experiences that transcend their generation.</p>
+                <div class="gen-badges">
+                    <span class="badge">PS1 Classics</span>
+                    <span class="badge">PS2 Legends</span>
+                    <span class="badge">PS3 Gems</span>
                 </div>
             </div>
-            <!-- Add more game grid items here -->
+            <div class="old-games-grid">
+                <div class="old-game-item">
+                    <img src="game-assets/Tekken 3 (PS1).jpg" alt="Tekken 3">
+                    <div class="game-title">Tekken 3</div>
+                    <div class="retro-price">$9.99</div>
+                </div>
+                <div class="old-game-item">
+                    <img src="game-assets/Metal Gear Solid 3 Snake Eater (PS2).jpg" alt="Metal Gear Solid 3">
+                    <div class="game-title">Metal Gear Solid 3: Snake Eater</div>
+                    <div class="retro-price">$14.99</div>
+                </div>
+                <div class="old-game-item">
+                    <img src="game-assets/The Last of Us (PS3).jpg" alt="The Last of Us">
+                    <div class="game-title">The Last of Us</div>
+                    <div class="retro-price">$19.99</div>
+                </div>
+                <div class="old-game-item">
+                    <img src="game-assets/FF7 (PS1).jpg" alt="Final Fantasy VII">
+                    <div class="game-title">Final Fantasy VII</div>
+                    <div class="retro-price">$9.99</div>
+                </div>
+                <div class="old-game-item">
+                    <img src="game-assets/GTA San Andreas (PS2).jpg" alt="GTA San Andreas">
+                    <div class="game-title">Grand Theft Auto: San Andreas</div>
+                    <div class="retro-price">$14.99</div>
+                </div>
+                <div class="old-game-item">
+                    <img src="game-assets/Grand Theft Auto V (PS3).jpg" alt="GTA V">
+                    <div class="game-title">Grand Theft Auto V</div>
+                    <div class="retro-price">$19.99</div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Game Library Section with Bootstrap -->
+    <section class="game-library py-5">
+        <div class="container-fluid">
+            <h2 class="text-center mb-5 library-title">X-POINT Game Library</h2>
+            <div class="row">
+                <!-- Left Sidebar with Search & Filters -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="filter-sidebar">
+                        <!-- Search Bar -->
+                        <div class="search-box mb-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="gameSearch" placeholder="Search games...">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Genre Filter -->
+                        <div class="filter-group mb-4">
+                            <button class="btn btn-filter w-100 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#genreCollapse">
+                                <span><i class="fas fa-gamepad me-2"></i>Genre</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="collapse show" id="genreCollapse">
+                                <div class="filter-options mt-2">
+                                    <button class="btn btn-filter-option w-100 mb-2 active" data-genre="all">All Genres</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-genre="action">Action</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-genre="rpg">RPG</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-genre="fighting">Fighting</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-genre="adventure">Adventure</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-genre="shooter">Shooter</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-genre="open-world">Open World</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Console Filter -->
+                        <div class="filter-group mb-4">
+                            <button class="btn btn-filter w-100 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#consoleCollapse">
+                                <span><i class="fas fa-tv me-2"></i>Console</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="collapse show" id="consoleCollapse">
+                                <div class="filter-options mt-2">
+                                    <button class="btn btn-filter-option w-100 mb-2 active" data-console="all">All Consoles</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-console="ps5">PlayStation 5</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-console="ps4">PlayStation 4</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-console="ps3">PlayStation 3</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-console="ps2">PlayStation 2</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-console="ps1">PlayStation 1</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-console="xbox">Xbox Series X|S</button>
+                                    <button class="btn btn-filter-option w-100 mb-2" data-console="pc">PC</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <button class="btn btn-clear-filters w-100" id="clearFilters">
+                            <i class="fas fa-redo me-2"></i>Clear All Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Grid with Games -->
+                <div class="col-lg-9 col-md-8">
+                    <div class="row g-4" id="gameGrid">
+                        <!-- GTA VI -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action open-world" data-console="ps5 xbox pc" data-name="Grand Theft Auto VI">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/GTA 6 Wall.jpg" class="card-img-top" alt="GTA VI">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto VI</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">Open World</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5, Xbox, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$69.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Call of Duty Black Ops 7 -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="shooter action" data-console="ps5 xbox pc" data-name="Call of Duty: Black Ops 7">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Call of Duty Black Ops 7 (Wall).jpg" class="card-img-top" alt="CoD Black Ops 7">
+                                <div class="card-body">
+                                    <h5 class="card-title">Call of Duty: Black Ops 7</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Shooter</span>
+                                        <span class="badge bg-genre">Action</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5, Xbox, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$69.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Battlefield 6 -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="shooter action" data-console="ps5 xbox pc" data-name="Battlefield 6">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Battlefield 6 (Wall).jpg" class="card-img-top" alt="Battlefield 6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Battlefield 6</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Shooter</span>
+                                        <span class="badge bg-genre">Action</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5, Xbox, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$59.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Where Winds Meet -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action rpg open-world" data-console="ps5 pc" data-name="Where Winds Meet">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Where Winds Meet (Wall).jpg" class="card-img-top" alt="Where Winds Meet">
+                                <div class="card-body">
+                                    <h5 class="card-title">Where Winds Meet</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre me-1">RPG</span>
+                                        <span class="badge bg-genre">Open World</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$79.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Arc Raiders -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="shooter action" data-console="ps5 xbox pc" data-name="Arc Raiders">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Arc Raiders (Wall).jpg" class="card-img-top" alt="Arc Raiders">
+                                <div class="card-body">
+                                    <h5 class="card-title">Arc Raiders</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Shooter</span>
+                                        <span class="badge bg-genre">Action</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5, Xbox, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$59.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elden Ring Nightreign -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action rpg" data-console="ps5 ps4 xbox pc" data-name="Elden Ring: Nightreign">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Elden Ring Nightreign (Poster).jpg" class="card-img-top" alt="Elden Ring Nightreign">
+                                <div class="card-body">
+                                    <h5 class="card-title">Elden Ring: Nightreign</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">RPG</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5, PS4, Xbox, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$39.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- God of War Ragnarok -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action adventure" data-console="ps5 ps4" data-name="God of War Ragnarök">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/God of War Ragnarok (Poster).jpg" class="card-img-top" alt="God of War Ragnarok">
+                                <div class="card-body">
+                                    <h5 class="card-title">God of War Ragnarök</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">Adventure</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5, PS4
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$49.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Red Dead Redemption -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action open-world" data-console="ps4 xbox pc" data-name="Red Dead Redemption">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/RDR Poster.jpg" class="card-img-top" alt="Red Dead Redemption">
+                                <div class="card-body">
+                                    <h5 class="card-title">Red Dead Redemption</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">Open World</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS4, Xbox, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$29.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Red Dead Redemption 2 -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action open-world" data-console="ps5 ps4 xbox pc" data-name="Red Dead Redemption 2">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/RDR2 Poster.png" class="card-img-top" alt="Red Dead Redemption 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Red Dead Redemption 2</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">Open World</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5, PS4, Xbox, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$34.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Final Fantasy XVI -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action rpg" data-console="ps5 pc" data-name="Final Fantasy XVI">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Final Fantasy 16 (Poster).jpg" class="card-img-top" alt="Final Fantasy XVI">
+                                <div class="card-body">
+                                    <h5 class="card-title">Final Fantasy XVI</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">RPG</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$44.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stellar Blade -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action" data-console="ps5" data-name="Stellar Blade">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Stellar Blade (Poster).jpg" class="card-img-top" alt="Stellar Blade">
+                                <div class="card-body">
+                                    <h5 class="card-title">Stellar Blade</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre">Action</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS5
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$39.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tekken 3 -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="fighting" data-console="ps1" data-name="Tekken 3">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Tekken 3 (PS1).jpg" class="card-img-top" alt="Tekken 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tekken 3</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre">Fighting</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS1
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$9.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Metal Gear Solid 3 -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action adventure" data-console="ps2" data-name="Metal Gear Solid 3: Snake Eater">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Metal Gear Solid 3 Snake Eater (PS2).jpg" class="card-img-top" alt="Metal Gear Solid 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Metal Gear Solid 3: Snake Eater</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">Adventure</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS2
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$14.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Last of Us -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action adventure" data-console="ps3 ps4" data-name="The Last of Us">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/The Last of Us (PS3).jpg" class="card-img-top" alt="The Last of Us">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Last of Us</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">Adventure</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS3, PS4
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$19.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Final Fantasy VII -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="rpg" data-console="ps1" data-name="Final Fantasy VII">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/FF7 (PS1).jpg" class="card-img-top" alt="Final Fantasy VII">
+                                <div class="card-body">
+                                    <h5 class="card-title">Final Fantasy VII</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre">RPG</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS1
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$9.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GTA San Andreas -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action open-world" data-console="ps2" data-name="Grand Theft Auto: San Andreas">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/GTA San Andreas (PS2).jpg" class="card-img-top" alt="GTA San Andreas">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto: San Andreas</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">Open World</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS2
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$14.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GTA V -->
+                        <div class="col-lg-4 col-md-6 game-card-wrapper" data-genre="action open-world" data-console="ps3 ps4 ps5 xbox pc" data-name="Grand Theft Auto V">
+                            <div class="card game-card h-100">
+                                <img src="game-assets/Grand Theft Auto V (PS3).jpg" class="card-img-top" alt="GTA V">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grand Theft Auto V</h5>
+                                    <p class="card-text">
+                                        <span class="badge bg-genre me-1">Action</span>
+                                        <span class="badge bg-genre">Open World</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fas fa-gamepad me-1"></i>PS3, PS4, PS5, Xbox, PC
+                                        </small>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="game-library-price">$19.99</span>
+                                        <button class="btn btn-add-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div id="noResults" class="text-center mt-5" style="display: none;">
+                        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                        <h4 class="text-muted">No games found</h4>
+                        <p class="text-muted">Try adjusting your search or filters</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="games.js"></script>
 </body>
 </html>
