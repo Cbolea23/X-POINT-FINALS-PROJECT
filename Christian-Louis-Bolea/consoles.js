@@ -19,10 +19,18 @@ const updateTheme = () => {
     if (!activeItem) return;
 
     let newTheme = activeItem.dataset.theme;
+    let newSound = activeItem.dataset.sound;
+
     if (newTheme === 'dark') {
         document.body.classList.add('dark-theme');
     } else {
         document.body.classList.remove('dark-theme');
+    }
+    
+    if (newSound === 'sounds/ps1-sound.mp3') {
+        document.body.classList.add('ps1-active');
+    } else {
+        document.body.classList.remove('ps1-active');
     }
 
     let newColor = activeItem.dataset.color;
